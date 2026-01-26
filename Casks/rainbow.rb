@@ -1,6 +1,6 @@
 cask "rainbow" do
-  version "0.0.1"
-  sha256 :no_check
+  version "0.1.3"
+  sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
 
   url "https://github.com/gokapi/gokapi/releases/download/v#{version}/Rainbow-#{version}-macOS-universal.dmg"
   name "Rainbow"
@@ -12,8 +12,8 @@ cask "rainbow" do
   # Remove quarantine bit for unsigned app
   postflight do
     system_command "/usr/bin/xattr",
-                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Rainbow.app"],
-                   sudo: false
+                  args: ["-dr", "com.apple.quarantine", "#{appdir}/Rainbow.app"],
+                  sudo: false
   end
 
   zap trash: [
