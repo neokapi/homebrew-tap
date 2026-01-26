@@ -1,6 +1,6 @@
 cask "rainbow" do
-  version "0.1.5"
-  sha256 "462e32d4363d930178ff478754e4c147e793f107f8f166de0cecc18fc69084eb"
+  version "0.1.6"
+  sha256 "38c174909fffd32238ad895f54a30cce8e1444981e3d7d1be3ed97f35969368b"
 
   url "https://github.com/gokapi/gokapi/releases/download/v#{version}/Rainbow-#{version}-macOS-universal.dmg"
   name "Rainbow"
