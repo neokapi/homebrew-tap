@@ -5,21 +5,21 @@
 class Kapi < Formula
   desc "Gokapi Framework - Modern localization toolkit for translators and developers"
   homepage "https://github.com/gokapi/gokapi"
-  version "0.1.7"
+  version "0.1.8"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/gokapi/gokapi/releases/download/v0.1.7/kapi_0.1.7_Darwin_x86_64.tar.gz"
-      sha256 "a465bd1ae01ac8d683ab49816e3422d06634520d4d0b492fdb39671617007c80"
+      url "https://github.com/gokapi/gokapi/releases/download/v0.1.8/kapi_0.1.8_Darwin_x86_64.tar.gz"
+      sha256 "90fe801ba1f253ab414223e58bbf52e0d22ab546970597a980d229642de74235"
 
       def install
         bin.install "kapi"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/gokapi/gokapi/releases/download/v0.1.7/kapi_0.1.7_Darwin_arm64.tar.gz"
-      sha256 "414aeaac1e634c7056889a3b7f5343f758e1d378bf8ac7b8e6cb1400612dc55f"
+      url "https://github.com/gokapi/gokapi/releases/download/v0.1.8/kapi_0.1.8_Darwin_arm64.tar.gz"
+      sha256 "b6e7cfea58b4328e680198e73415abf827d695b16e021a3a8b3af53860dd4da8"
 
       def install
         bin.install "kapi"
@@ -29,15 +29,15 @@ class Kapi < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gokapi/gokapi/releases/download/v0.1.7/kapi_0.1.7_Linux_x86_64.tar.gz"
-      sha256 "cddd1fc3a830ca38896ea243ab8c4a9490108ee11a0fefba5cc0cb057789d6c7"
+      url "https://github.com/gokapi/gokapi/releases/download/v0.1.8/kapi_0.1.8_Linux_x86_64.tar.gz"
+      sha256 "37bd756af2a3aff8d4e719f49862b744c8d40e27173641e0d063d81d15a6fc4d"
       def install
         bin.install "kapi"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gokapi/gokapi/releases/download/v0.1.7/kapi_0.1.7_Linux_arm64.tar.gz"
-      sha256 "99b8bb96d032f0110e2aa5a976efc9ed7ff3e385b03901317d6a5eae1a7f5b48"
+      url "https://github.com/gokapi/gokapi/releases/download/v0.1.8/kapi_0.1.8_Linux_arm64.tar.gz"
+      sha256 "8b5a582bd2d9b189e86b2d79d4ac795ef8031323d4f9a88175a96769608d8bb9"
       def install
         bin.install "kapi"
       end
