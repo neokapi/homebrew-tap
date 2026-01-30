@@ -14,22 +14,22 @@ cask "kapi" do
   on_macos do
     on_intel do
       url "https://github.com/gokapi/gokapi/releases/download/v#{version}/kapi_#{version}_darwin_amd64.tar.gz"
-      sha256 "c81bc2525bc7a8c9d0a34b0b21b87ee961b7a3252c237ca09ce74ab970b4a1b0"
+      sha256 "c12b84383d1581967b57433118650cb206effe297ee23500ac8d4252f98b3a16"
     end
     on_arm do
       url "https://github.com/gokapi/gokapi/releases/download/v#{version}/kapi_#{version}_darwin_arm64.tar.gz"
-      sha256 "7d8c390480825aacd0a63aec4494e70a613a9f90bc1abd17079836784c1560c2"
+      sha256 "8c1a1f7c449bc599fa862f3158b094a4027124d4d6a3f284ebf181c5373627ec"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/gokapi/gokapi/releases/download/v#{version}/kapi_#{version}_linux_amd64.tar.gz"
-      sha256 "166c348b2b8d6b576866f2a9b5c36f733f29c9382b33a37d6bb89e3b7f38cb07"
+      sha256 "8f5a512ac43b966282074e59bbc378d015b56a2c575418b885bec9ba3bb1521b"
     end
     on_arm do
       url "https://github.com/gokapi/gokapi/releases/download/v#{version}/kapi_#{version}_linux_arm64.tar.gz"
-      sha256 "92670c2c4605d3f0913e01cd9fd75f24d2b1e3279ef8153635a9e4b4e3395f31"
+      sha256 "557294559b657ba59de2950d2b1581e35be26fc4ace49c73d55aab8dfb8c633d"
     end
   end
 
