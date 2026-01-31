@@ -3,8 +3,8 @@
 require "#{Tap.fetch("gokapi", "tap").path}/lib/private_download_strategy"
 
 cask "bowrain" do
-  version "0.2.2"
-  sha256 "2da7e15c978abb1142c4e057518718fbd3a7494df8d2dedf95d11166cf274592"
+  version "0.3.0"
+  sha256 "47b0147a8f225c1c5cf0844551a3aabf64ea899640c8860e15eb9aee208c4a3a"
 
   url "https://github.com/gokapi/gokapi/releases/download/v#{version}/bowrain-#{version}-macOS-universal.dmg",
       using: GitHubPrivateRepositoryReleaseDownloadStrategy
@@ -20,6 +20,12 @@ cask "bowrain" do
                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Bowrain.app"],
                   sudo: false
   end
+
+  caveats <<~EOS
+    If Bowrain.app was previously installed from a DMG, run:
+      brew install --cask --force gokapi/tap/bowrain
+    to let Homebrew manage it. Future upgrades will work normally.
+  EOS
 
   zap trash: [
     "~/Library/Application Support/Bowrain",
