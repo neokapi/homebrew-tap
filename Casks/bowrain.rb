@@ -1,8 +1,8 @@
 require_relative "../lib/private_download_strategy"
 
 cask "bowrain" do
-  version "0.1.4"
-  sha256 "3269a3c2608fd3735d2d2ca7f8aac14b5fc2ed7b1c5c96309fe9e9c0867ebc92"
+  version "0.2.1"
+  sha256 "0166cba72c012d451d59706ab76a336472303636d95461f35ba0d9a95be2932d"
 
   url "https://github.com/gokapi/gokapi/releases/download/v#{version}/bowrain-#{version}-macOS-universal.dmg",
       using: GitHubPrivateRepositoryReleaseDownloadStrategy
