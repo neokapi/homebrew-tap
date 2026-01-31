@@ -1,4 +1,6 @@
-require_relative "../lib/private_download_strategy"
+# Use absolute tap path so the require works even when Homebrew loads
+# the cask from its metadata cache during upgrades.
+require "#{Tap.fetch("gokapi", "tap").path}/lib/private_download_strategy"
 
 cask "bowrain" do
   version "0.2.1"
