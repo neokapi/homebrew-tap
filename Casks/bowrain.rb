@@ -15,12 +15,17 @@ cask "bowrain" do
   app "Bowrain.app"
   binary "Bowrain.app/Contents/MacOS/Bowrain", target: "bowrain"
 
-  # Remove quarantine bit for unsigned app
   postflight do
     system_command "/usr/bin/xattr",
                   args: ["-dr", "com.apple.quarantine", "#{appdir}/Bowrain.app"],
                   sudo: false
   end
+
+  caveats <<~EOS
+    If Bowrain.app was previously installed from a DMG, run:
+      brew install --cask --force gokapi/tap/bowrain
+    to let Homebrew manage it. Future upgrades will work normally.
+  EOS
 
   zap trash: [
     "~/Library/Application Support/Bowrain",
