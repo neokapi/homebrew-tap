@@ -12,7 +12,7 @@ class Kapi < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/gokapi/gokapi/releases/download/v0.2.1/kapi_0.2.1_darwin_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "31a055ac29f95b2d437a4637b771ef473b2007efad1861add28bdef6f82ec7cf"
+      sha256 "980ecbd9a5ce5dad85ac470c317d92a67f05574206121f2116c5faf8f2e78e40"
 
       def install
         bin.install "kapi"
@@ -20,7 +20,7 @@ class Kapi < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/gokapi/gokapi/releases/download/v0.2.1/kapi_0.2.1_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "426f022e92d1ca0c5a1f74948d150f90a8bfe24b5a73b7b1e8c9eb5daffff0a7"
+      sha256 "bac2cabc52c79cf15f75bbf39d573ccc1780641dc79a6a549ec30f04c11ce67a"
 
       def install
         bin.install "kapi"
@@ -31,14 +31,14 @@ class Kapi < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/gokapi/gokapi/releases/download/v0.2.1/kapi_0.2.1_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "7aa6249966d97de437be83ff8d61108ba4d45c54149d23c8b8eaa06761f55ded"
+      sha256 "4a564eb0c7353de2cc3692630a53f1a43aaa0b47be57684c00ec5804e9b644c4"
       def install
         bin.install "kapi"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/gokapi/gokapi/releases/download/v0.2.1/kapi_0.2.1_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "737b1415ea105722f4222d715c6a825ee4dd7447a26e31bbd6f36c0e4db727df"
+      sha256 "a9a07119fb8c12d1ed332e27bfbdf2d52bb193a7f3a74206aaa121a705d99871"
       def install
         bin.install "kapi"
       end
