@@ -6,21 +6,21 @@ require_relative "lib/private_download_strategy"
 class Kapi < Formula
   desc "AI-native localization framework — format-aware parsing, concurrent pipelines, and pluggable tools"
   homepage "https://github.com/gokapi/gokapi"
-  version "0.10.0"
+  version "0.11.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/gokapi/gokapi/releases/download/v0.10.0/kapi_0.10.0_darwin_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "4093bf3a59a5efbb658fdf073c7893383dd28cd00347ddd6beb64d81a8882d80"
+      url "https://github.com/gokapi/gokapi/releases/download/v0.11.0/kapi_0.11.0_darwin_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "b7d6bae97b3d934e07dc92aed68c2b765cdb108bd77dbb7f083330f525470fba"
 
       def install
         bin.install "kapi"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/gokapi/gokapi/releases/download/v0.10.0/kapi_0.10.0_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "e5c62d5fd6c48f388f625d46a77a961e9925c7139c816e85941be0765dd4847d"
+      url "https://github.com/gokapi/gokapi/releases/download/v0.11.0/kapi_0.11.0_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "446a2fbf521698391b62dabbe8e131a52cb7f3ce57f4c3632537b774589fb7d3"
 
       def install
         bin.install "kapi"
@@ -30,15 +30,15 @@ class Kapi < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gokapi/gokapi/releases/download/v0.10.0/kapi_0.10.0_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "8e86068f668cc3918ec8554bf7cd1a88de90a05bfc6fdf0b1042e4919eb569af"
+      url "https://github.com/gokapi/gokapi/releases/download/v0.11.0/kapi_0.11.0_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "861377d9a10ec51b90ea103996725be6f7fc1c2271f50ff814f7659552d88b1f"
       def install
         bin.install "kapi"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gokapi/gokapi/releases/download/v0.10.0/kapi_0.10.0_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "73af6cb55b57c8e2d6137d73a6da2fa592ede9b481f5e59c5855b72acdd25591"
+      url "https://github.com/gokapi/gokapi/releases/download/v0.11.0/kapi_0.11.0_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "93b254d28180a3e044ee28a9581e4c0f62c142f788805f92dd5d4c8134cd6907"
       def install
         bin.install "kapi"
       end
