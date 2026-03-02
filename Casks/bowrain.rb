@@ -4,7 +4,7 @@ require "#{Tap.fetch("gokapi", "tap").path}/lib/private_download_strategy"
 
 cask "bowrain" do
   version "0.24.0"
-  sha256 "674c0825a5679d8af9cc2379117ccd5f3e14643c06b01cadc239c55a4765ba2c"
+  sha256 "3ca17ae5a41888fe2cc724270db021fc334028e756ff71e605e70be01d750532"
 
   url "https://github.com/gokapi/gokapi/releases/download/v#{version}/bowrain-#{version}-macOS-universal.dmg",
       using: GitHubPrivateRepositoryReleaseDownloadStrategy
