@@ -12,7 +12,7 @@ class BowrainCli < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/gokapi/gokapi/releases/download/v0.24.0/bowrain-cli_0.24.0_darwin_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "95434da4bfb5f5ff5c3465d8a441606cd1c9c26fb81091afc35f310402cdadff"
+      sha256 "c7667af3a3f637d10f8eb1d4a3bfc1a082819054068383687c5029b51b03cde2"
 
       define_method(:install) do
         bin.install "brain"
@@ -21,7 +21,7 @@ class BowrainCli < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/gokapi/gokapi/releases/download/v0.24.0/bowrain-cli_0.24.0_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "6639f1b0c3ebef44c9df69c14c46936cb68a4a8ba921ffb89f4c624600d9d165"
+      sha256 "9d80a20fa7e66019ab13b42c7e58a9456e7473544f9a8abdacb4b7051274014b"
 
       define_method(:install) do
         bin.install "brain"
@@ -33,7 +33,7 @@ class BowrainCli < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/gokapi/gokapi/releases/download/v0.24.0/bowrain-cli_0.24.0_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "6a5cf8f9056e41115547c57dba9638dde4e66dd066f8b843f39420d653a2ac95"
+      sha256 "2c19aed18f930ed0311d80ce411050aecd7d401865e057e1de82a130fc04cdea"
       define_method(:install) do
         bin.install "brain"
         bin.install_symlink bin/"brain" => "bowrain"
@@ -41,7 +41,7 @@ class BowrainCli < Formula
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/gokapi/gokapi/releases/download/v0.24.0/bowrain-cli_0.24.0_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "f741c07ef3bd8c87f9a8eba7153260fc4e483fed61db4d0968a0573eb2a769ab"
+      sha256 "f82d176d4043ad04abeec2905f9625fd930e504eb4b67ea74a0cfda2b8e8e9f1"
       define_method(:install) do
         bin.install "brain"
         bin.install_symlink bin/"brain" => "bowrain"
