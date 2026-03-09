@@ -6,13 +6,13 @@ require_relative "lib/private_download_strategy"
 class BowrainCli < Formula
   desc "Bowrain CLI — manage localization projects, sync with Bowrain Server"
   homepage "https://github.com/gokapi/gokapi"
-  version "0.28.6"
+  version "0.28.7"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/gokapi/gokapi/releases/download/v0.28.6/bowrain-cli_0.28.6_darwin_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "377e5f07606cc0c53f0c03776e741ef8ac9e696c8307f42caa8c1ed63a378c33"
+      url "https://github.com/gokapi/gokapi/releases/download/v0.28.7/bowrain-cli_0.28.7_darwin_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "3b3afb593a435accd808032e5d13ca8c54945380bc4c272e4d41dbce30a7d7fb"
 
       define_method(:install) do
         bin.install "bowrain"
@@ -20,8 +20,8 @@ class BowrainCli < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/gokapi/gokapi/releases/download/v0.28.6/bowrain-cli_0.28.6_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "df4dd4d60f9157dd83e70b09254d0ae24f79c852bc04422fafa86f41ed6ebdb0"
+      url "https://github.com/gokapi/gokapi/releases/download/v0.28.7/bowrain-cli_0.28.7_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "dc107a617098292449cac77d5bfc1cb4b58fa852e34d804e07afa331e868af92"
 
       define_method(:install) do
         bin.install "bowrain"
@@ -32,16 +32,16 @@ class BowrainCli < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gokapi/gokapi/releases/download/v0.28.6/bowrain-cli_0.28.6_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "2fd27a48b2859846f4d32b5b209ed442cb467aefe0261a83c5c6bdf5c4fc095a"
+      url "https://github.com/gokapi/gokapi/releases/download/v0.28.7/bowrain-cli_0.28.7_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "2bb37bc9d485becb7f82d53d0ea38418ea046fe6e95ed1c1fd7414b3c1daac9d"
       define_method(:install) do
         bin.install "bowrain"
         bin.install_symlink bin/"bowrain" => "brain"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gokapi/gokapi/releases/download/v0.28.6/bowrain-cli_0.28.6_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "54b5f06f8461ed08f3a87feda8a6543e108b6be3096e86df74f9d5bd73c444e2"
+      url "https://github.com/gokapi/gokapi/releases/download/v0.28.7/bowrain-cli_0.28.7_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "77ecdf1214fd1b966684f54a03284d2ca6bf9beefb091f0cb64a594a72b41424"
       define_method(:install) do
         bin.install "bowrain"
         bin.install_symlink bin/"bowrain" => "brain"
