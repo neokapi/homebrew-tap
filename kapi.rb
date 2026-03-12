@@ -5,13 +5,13 @@
 require_relative "lib/private_download_strategy"
 class Kapi < Formula
   desc "AI-native localization framework — format-aware parsing, concurrent pipelines, and pluggable tools"
-  homepage "https://github.com/gokapi/gokapi"
+  homepage "https://github.com/neokapi/neokapi"
   version "0.28.8"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/gokapi/gokapi/releases/download/v0.28.8/kapi_0.28.8_darwin_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      url "https://github.com/neokapi/neokapi/releases/download/v0.28.8/kapi_0.28.8_darwin_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
       sha256 "5352ee8d9ddcacb74a17fa69251579a9b77a6fd8f12252466a3f25b2ef551818"
 
       define_method(:install) do
@@ -19,7 +19,7 @@ class Kapi < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/gokapi/gokapi/releases/download/v0.28.8/kapi_0.28.8_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      url "https://github.com/neokapi/neokapi/releases/download/v0.28.8/kapi_0.28.8_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
       sha256 "7803594550c6651c91c42e467e2339fd9f6066169aa347e5a53c2ddcb065c743"
 
       define_method(:install) do
@@ -30,14 +30,14 @@ class Kapi < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gokapi/gokapi/releases/download/v0.28.8/kapi_0.28.8_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      url "https://github.com/neokapi/neokapi/releases/download/v0.28.8/kapi_0.28.8_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
       sha256 "cff818ce0c4ee15cca00867c7b300fa7e0d42b52b2d75622d8b7650da685e983"
       define_method(:install) do
         bin.install "kapi"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gokapi/gokapi/releases/download/v0.28.8/kapi_0.28.8_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      url "https://github.com/neokapi/neokapi/releases/download/v0.28.8/kapi_0.28.8_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
       sha256 "bbd4cf1c63d745e7b4b2a394d0d72f0ba2e85aa010c00c01f7751e20497f0bca"
       define_method(:install) do
         bin.install "kapi"

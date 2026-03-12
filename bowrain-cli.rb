@@ -5,13 +5,13 @@
 require_relative "lib/private_download_strategy"
 class BowrainCli < Formula
   desc "Bowrain CLI — manage localization projects, sync with Bowrain Server"
-  homepage "https://github.com/gokapi/gokapi"
+  homepage "https://github.com/neokapi/neokapi"
   version "0.28.8"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/gokapi/gokapi/releases/download/v0.28.8/bowrain-cli_0.28.8_darwin_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      url "https://github.com/neokapi/neokapi/releases/download/v0.28.8/bowrain-cli_0.28.8_darwin_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
       sha256 "82dec86f8a0e88a42b9f351a6bcb8a9c954de00f1dceb24f39bab10383efd5a3"
 
       define_method(:install) do
@@ -20,7 +20,7 @@ class BowrainCli < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/gokapi/gokapi/releases/download/v0.28.8/bowrain-cli_0.28.8_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      url "https://github.com/neokapi/neokapi/releases/download/v0.28.8/bowrain-cli_0.28.8_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
       sha256 "08ce965756b3e7d92d3c8a3922484d0ff0baff212d638352f083b5818eb478f2"
 
       define_method(:install) do
@@ -32,7 +32,7 @@ class BowrainCli < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gokapi/gokapi/releases/download/v0.28.8/bowrain-cli_0.28.8_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      url "https://github.com/neokapi/neokapi/releases/download/v0.28.8/bowrain-cli_0.28.8_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
       sha256 "e90fbb6211a4fe3a2de9f7087f6b991c4ba296535d3a879abc1976a5f002d170"
       define_method(:install) do
         bin.install "bowrain"
@@ -40,7 +40,7 @@ class BowrainCli < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/gokapi/gokapi/releases/download/v0.28.8/bowrain-cli_0.28.8_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      url "https://github.com/neokapi/neokapi/releases/download/v0.28.8/bowrain-cli_0.28.8_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
       sha256 "ea230fb6b8626e7baa783b8fb91c5fa2340cb570aca0ae16e4f23fda23525c88"
       define_method(:install) do
         bin.install "bowrain"
