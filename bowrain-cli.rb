@@ -12,7 +12,7 @@ class BowrainCli < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/neokapi/neokapi/releases/download/v0.2.0/bowrain-cli_0.2.0_darwin_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "97f6195373aabc5362eac09b9998d373fec78bb046263996308dd523f88364d1"
+      sha256 "13785eb7c0c6c94613b709dab1b011d3dda5a12caea80d2b0d438354bc037394"
 
       define_method(:install) do
         bin.install "bowrain"
@@ -20,7 +20,7 @@ class BowrainCli < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/neokapi/neokapi/releases/download/v0.2.0/bowrain-cli_0.2.0_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "b87668fdc76dcece4d03fd64eef2bddba0f3cf87f39229243aff04c949f7558f"
+      sha256 "5560469611aa19a6e680c78b1c750de75411972e4004f78c2f4ee047d1aadb8c"
 
       define_method(:install) do
         bin.install "bowrain"
@@ -31,14 +31,14 @@ class BowrainCli < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/neokapi/neokapi/releases/download/v0.2.0/bowrain-cli_0.2.0_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "e697b67338a1fa730773ce277bbdb82cc7ec08d7e5054633dfcd88f5d617b477"
+      sha256 "92163046304f684cb7cd34f0895ac57d0395b254f72d5f14b7973bb8eae14106"
       define_method(:install) do
         bin.install "bowrain"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/neokapi/neokapi/releases/download/v0.2.0/bowrain-cli_0.2.0_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "8bc721d944482adfd7d69a83c3e6b58181b240ad9d2eb7c630cd70eae19f9c75"
+      sha256 "80d502869cdf25b7320d7eb31acd9bf050c33b654c6a9cb4b4418a07942ca60c"
       define_method(:install) do
         bin.install "bowrain"
       end
