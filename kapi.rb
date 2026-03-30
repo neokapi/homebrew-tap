@@ -12,7 +12,7 @@ class Kapi < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/neokapi/neokapi/releases/download/v0.2.0/kapi_0.2.0_darwin_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "5d28d187bc217c7eb6f849d7ab41ad1aaa724dc50f5887ff2b99ef3945a1a025"
+      sha256 "e475859be26ca33daaf6fe17f25296917df424aa1fb57c33cb38b6c6a7785186"
 
       define_method(:install) do
         bin.install "kapi"
@@ -20,7 +20,7 @@ class Kapi < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/neokapi/neokapi/releases/download/v0.2.0/kapi_0.2.0_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "b37d6a8141c781d12367c442d7a030a72565691ae24f747b8a8f3d57f94b38e9"
+      sha256 "a0f1132b93b2e0535697c450666cafe548a5a8fe772eafd65eddc4d26f8bd434"
 
       define_method(:install) do
         bin.install "kapi"
@@ -31,14 +31,14 @@ class Kapi < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/neokapi/neokapi/releases/download/v0.2.0/kapi_0.2.0_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "6e9d23c4d24b04ab35c8c0bf666fcdcffcdd4ebb38a4726b4edde018f9ff7e29"
+      sha256 "3badb4c7bc0ac32c8a87b6c69ea67401687f7704fa260ba5998555d8dfd0f782"
       define_method(:install) do
         bin.install "kapi"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/neokapi/neokapi/releases/download/v0.2.0/kapi_0.2.0_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "2bdcb46edb44e62d833fd2639048a7bf8660d46bd1b6dbe7ae156b079ae89355"
+      sha256 "c41e1dacf43d09ea9298c96310f00719834b6098421a1ce7377b3022b0215e87"
       define_method(:install) do
         bin.install "kapi"
       end
