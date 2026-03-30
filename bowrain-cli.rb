@@ -6,51 +6,46 @@ require_relative "lib/private_download_strategy"
 class BowrainCli < Formula
   desc "Bowrain CLI — manage localization projects, sync with Bowrain Server"
   homepage "https://github.com/neokapi/neokapi"
-  version "0.1.1"
+  version "0.2.0"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/neokapi/neokapi/releases/download/v0.1.1/bowrain-cli_0.1.1_darwin_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "f2045432e1895998392142c038774bc37b8b8766a85ea5a7da01458faba1acfa"
+      url "https://github.com/neokapi/neokapi/releases/download/v0.2.0/bowrain-cli_0.2.0_darwin_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "97f6195373aabc5362eac09b9998d373fec78bb046263996308dd523f88364d1"
 
       define_method(:install) do
         bin.install "bowrain"
-        bin.install_symlink bin/"bowrain" => "brain"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/neokapi/neokapi/releases/download/v0.1.1/bowrain-cli_0.1.1_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "02fc7c33686d55bb17492fc5f75ba1bb26d08ba3d7b27b6943685c674c4f15a3"
+      url "https://github.com/neokapi/neokapi/releases/download/v0.2.0/bowrain-cli_0.2.0_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "b87668fdc76dcece4d03fd64eef2bddba0f3cf87f39229243aff04c949f7558f"
 
       define_method(:install) do
         bin.install "bowrain"
-        bin.install_symlink bin/"bowrain" => "brain"
       end
     end
   end
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/neokapi/neokapi/releases/download/v0.1.1/bowrain-cli_0.1.1_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "a60900f19725830d7fe82f2082f71da6d1652b3109ffde1ead2131da78a3a982"
+      url "https://github.com/neokapi/neokapi/releases/download/v0.2.0/bowrain-cli_0.2.0_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "e697b67338a1fa730773ce277bbdb82cc7ec08d7e5054633dfcd88f5d617b477"
       define_method(:install) do
         bin.install "bowrain"
-        bin.install_symlink bin/"bowrain" => "brain"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/neokapi/neokapi/releases/download/v0.1.1/bowrain-cli_0.1.1_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "85f34c223ac4241db20779a6a864730ebe67c8cab6d5b2a9ccc717892f46de64"
+      url "https://github.com/neokapi/neokapi/releases/download/v0.2.0/bowrain-cli_0.2.0_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "8bc721d944482adfd7d69a83c3e6b58181b240ad9d2eb7c630cd70eae19f9c75"
       define_method(:install) do
         bin.install "bowrain"
-        bin.install_symlink bin/"bowrain" => "brain"
       end
     end
   end
 
   test do
     system "#{bin}/bowrain", "version"
-    system "#{bin}/brain", "version"
   end
 end
