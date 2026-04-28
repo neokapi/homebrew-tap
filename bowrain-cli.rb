@@ -6,15 +6,15 @@ require_relative "lib/private_download_strategy"
 class BowrainCli < Formula
   desc "Bowrain plugin for kapi — sync .kapi projects with Bowrain Server"
   homepage "https://github.com/neokapi/neokapi"
-  version "1.0.6"
+  version "1.0.7"
   license "Apache-2.0"
 
   depends_on "kapi"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/neokapi/neokapi/releases/download/v1.0.6/kapi-bowrain_1.0.6_darwin_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "049234d65f9998c915118cef39980bbbde623f769b8aeb558479c4dacdc3c378"
+      url "https://github.com/neokapi/neokapi/releases/download/v1.0.7/kapi-bowrain_1.0.7_darwin_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "ea7f0ea695c213c5f324267c4b16d1cd483adf23ade46570722dc70dbebcd635"
 
       define_method(:install) do
         plugin_dir = pkgshare/"plugins/bowrain"
@@ -28,8 +28,8 @@ class BowrainCli < Formula
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/neokapi/neokapi/releases/download/v1.0.6/kapi-bowrain_1.0.6_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "f002da9772f4c4a3d72faa061f0b3c0dc39de4ed893e98816fb814f73b479889"
+      url "https://github.com/neokapi/neokapi/releases/download/v1.0.7/kapi-bowrain_1.0.7_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "c16d83628cd938b9897dc67be5fdfadf66d1d7b454445c92061dec6efdda6269"
 
       define_method(:install) do
         plugin_dir = pkgshare/"plugins/bowrain"
@@ -46,8 +46,8 @@ class BowrainCli < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/neokapi/neokapi/releases/download/v1.0.6/kapi-bowrain_1.0.6_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "707e42d867925a2a0d55a14645385713377701be121b04e7a8e8c33bc5345d80"
+      url "https://github.com/neokapi/neokapi/releases/download/v1.0.7/kapi-bowrain_1.0.7_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "91ee79715769e1509ec9a172ece589e50f49f74224c1845ea65b8a2d0d815911"
       define_method(:install) do
         plugin_dir = pkgshare/"plugins/bowrain"
         plugin_dir.mkpath
@@ -60,8 +60,8 @@ class BowrainCli < Formula
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/neokapi/neokapi/releases/download/v1.0.6/kapi-bowrain_1.0.6_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "f2164f4c97d2a3632f0db0e5a030a12ba5ca2b6df10d05a6fbe21b59def8d574"
+      url "https://github.com/neokapi/neokapi/releases/download/v1.0.7/kapi-bowrain_1.0.7_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "4187f44aec1146c30bd4b987e1b09dfe12f90de46ec5a783228f1809e9f4f9dc"
       define_method(:install) do
         plugin_dir = pkgshare/"plugins/bowrain"
         plugin_dir.mkpath
