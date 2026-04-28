@@ -3,8 +3,8 @@
 require "#{Tap.fetch("neokapi", "tap").path}/lib/private_download_strategy"
 
 cask "bowrain" do
-  version "1.0.5"
-  sha256 "e50bc043e0c15c1a9d816fd42c42105979cf1abf0613abacc27cba6fb0f9223a"
+  version "1.0.6"
+  sha256 "ce18cd9ec09197fdf0b08486e6daf6380b85881da76b78cd5a3d3e3fb2198215"
 
   url "https://github.com/neokapi/neokapi/releases/download/v#{version}/bowrain-#{version}-macOS-arm64.dmg",
       using: GitHubPrivateRepositoryReleaseDownloadStrategy
