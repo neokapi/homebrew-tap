@@ -6,21 +6,21 @@ require_relative "lib/private_download_strategy"
 class Kapi < Formula
   desc "AI-native localization framework — format-aware parsing, concurrent pipelines, and pluggable tools"
   homepage "https://github.com/neokapi/neokapi"
-  version "1.0.5"
+  version "1.0.6"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/neokapi/neokapi/releases/download/v1.0.5/kapi_1.0.5_darwin_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "59b57f1b74d0f174b2e2f550f50198ce3ac6df99e354b99bd6b0a51d20998aa0"
+      url "https://github.com/neokapi/neokapi/releases/download/v1.0.6/kapi_1.0.6_darwin_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "9dac1ecdc71a170c2470c6f7b88ccd1dbdd0a49e6bebdd87a2574f1e7e8ae6cd"
 
       define_method(:install) do
         bin.install "kapi"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/neokapi/neokapi/releases/download/v1.0.5/kapi_1.0.5_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "f28730063792318fe5023d4ef6bf630b540cd4bbcd9abec9732c645c28a3d157"
+      url "https://github.com/neokapi/neokapi/releases/download/v1.0.6/kapi_1.0.6_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "237f86867ea98f8f3396a4df60ef7a38f1670d815ef605c3fa52b8ce157501c6"
 
       define_method(:install) do
         bin.install "kapi"
@@ -30,15 +30,15 @@ class Kapi < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/neokapi/neokapi/releases/download/v1.0.5/kapi_1.0.5_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "76b3064467fa2b5335a66e248f4acb0c5ff2c66071864d3e60f7698a28e2af5e"
+      url "https://github.com/neokapi/neokapi/releases/download/v1.0.6/kapi_1.0.6_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "92a2ab4cc8b0538a7d52b5316ca372f9e292ee563523aae6932b39a73f105b76"
       define_method(:install) do
         bin.install "kapi"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/neokapi/neokapi/releases/download/v1.0.5/kapi_1.0.5_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "25c97780947bf8c319c5135134b05b139d595636c7eaef3abc01fa7d440b3e54"
+      url "https://github.com/neokapi/neokapi/releases/download/v1.0.6/kapi_1.0.6_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "c98d4734c8424cb9c2121a3fb20a110c6a820240f54e9213ac7dccb8ded06c5d"
       define_method(:install) do
         bin.install "kapi"
       end
