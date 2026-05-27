@@ -3,8 +3,8 @@
 require "#{Tap.fetch("neokapi", "tap").path}/lib/private_download_strategy"
 
 cask "kapi" do
-  version "1.0.7"
-  sha256 ""
+  version "1.0.9"
+  sha256 "dc86c26615d14b950db27c684d7012da84f028f83290768848d20e8d036e8147"
 
   url "https://github.com/neokapi/neokapi/releases/download/v#{version}/kapi-desktop-#{version}-macOS-arm64.dmg",
       using: GitHubPrivateRepositoryReleaseDownloadStrategy
