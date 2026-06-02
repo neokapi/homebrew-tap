@@ -3,26 +3,26 @@ require "#{Tap.fetch("neokapi", "tap").path}/lib/private_download_strategy"
 class BowrainCli < Formula
   desc "Bowrain plugin for kapi — sync .kapi projects with Bowrain Server"
   homepage "https://github.com/neokapi/neokapi"
-  version "1.1.0"
+  version "1.1.1"
   license "Apache-2.0"
 
   depends_on "neokapi/tap/kapi-cli"
 
   on_macos do
     on_arm do
-      url "https://github.com/neokapi/neokapi/releases/download/v1.1.0/kapi-bowrain_1.1.0_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "7a2aa22497a6d7515dfac827c17a3f11b12c92a63a4168bf1f9cc6361b89d847"
+      url "https://github.com/neokapi/neokapi/releases/download/v1.1.1/kapi-bowrain_1.1.1_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "313afdced77ddffd7e6f8cd9214bd11144738559dda6c1d9a4867f440f66d7f7"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/neokapi/neokapi/releases/download/v1.1.0/kapi-bowrain_1.1.0_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "88e4acf5d1e0dbe4e54db464aedf92c3630453761479e74206ba076ca4c61244"
+      url "https://github.com/neokapi/neokapi/releases/download/v1.1.1/kapi-bowrain_1.1.1_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "5bb96ce3334f1da96f5ecaa8a23a17eaf3a027d0d16b838bd341caf9eb394d66"
     end
     on_intel do
-      url "https://github.com/neokapi/neokapi/releases/download/v1.1.0/kapi-bowrain_1.1.0_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "2c01de7cb2f2211359a1bb8778a0d19a6f05037a9804cc820b514264ca8799f5"
+      url "https://github.com/neokapi/neokapi/releases/download/v1.1.1/kapi-bowrain_1.1.1_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "e8f6584b039314454edab5aa708c4e0e632604c52c98f5f307c1cfebfa4889b4"
     end
   end
 
