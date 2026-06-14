@@ -1,13 +1,11 @@
 # Use absolute tap path so the require works even when Homebrew loads
 # the cask from its metadata cache during upgrades.
-require "#{Tap.fetch("neokapi", "tap").path}/lib/private_download_strategy"
 
 cask "kapi" do
   version "1.0.0"
   sha256 "37e15daa501d6e0332748142e148ecac0ee2e8a535469d9cc27b5d8f7db7887e"
 
-  url "https://github.com/neokapi/neokapi/releases/download/v#{version}/kapi-desktop-#{version}-macOS-arm64.dmg",
-      using: GitHubPrivateRepositoryReleaseDownloadStrategy
+  url "https://github.com/neokapi/neokapi/releases/download/v#{version}/kapi-desktop-#{version}-macOS-arm64.dmg"
   name "Kapi"
   desc "Localization toolkit - powered by neokapi"
   homepage "https://github.com/neokapi/neokapi"
