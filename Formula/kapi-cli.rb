@@ -3,24 +3,24 @@ require "#{Tap.fetch("neokapi", "tap").path}/lib/private_download_strategy"
 class KapiCli < Formula
   desc "AI-native localization framework — format-aware parsing, concurrent pipelines, and pluggable tools"
   homepage "https://github.com/neokapi/neokapi"
-  version "1.2.0"
+  version "1.0.0"
   license "Apache-2.0"
 
   on_macos do
     on_arm do
-      url "https://github.com/neokapi/neokapi/releases/download/v1.2.0/kapi_1.2.0_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "eb05c4fce82239a2375e77b46df6a189c09f430e8d0c18a96556dd4b47e5a483"
+      url "https://github.com/neokapi/neokapi/releases/download/v1.0.0/kapi_1.0.0_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "0178a0631ce341d7c21bb83630c5818f1523dcb377146b1c8943ed3eb5791073"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/neokapi/neokapi/releases/download/v1.2.0/kapi_1.2.0_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "1da4a490f2a1e4cf791aca25b9976b940e13ce8b6a00f2f0f078c9f92d0c1a71"
+      url "https://github.com/neokapi/neokapi/releases/download/v1.0.0/kapi_1.0.0_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "77323c711631c5facda64820db7b8b0f0bd9862ce2648b8db380c3379c606ef3"
     end
     on_intel do
-      url "https://github.com/neokapi/neokapi/releases/download/v1.2.0/kapi_1.2.0_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "43f0e372d86d691599251b986ebdb830a96667a6c2c92aec67c194865d404db8"
+      url "https://github.com/neokapi/neokapi/releases/download/v1.0.0/kapi_1.0.0_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "f58a2816adddf65ac073262ba60a22bbe62650293e7494de7ca982f2babfcca5"
     end
   end
 
