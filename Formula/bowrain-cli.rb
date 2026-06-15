@@ -8,16 +8,19 @@ class BowrainCli < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/neokapi/neokapi/releases/download/v1.0.1/kapi-bowrain_1.0.1_darwin_arm64.tar.gz"      sha256 "b4970fe273f9462ab718ebc1c8eeec678c0102b9d54f84ca26904eb46bfe578e"
+      url "https://github.com/neokapi/neokapi/releases/download/v1.0.1/kapi-bowrain_1.0.1_darwin_arm64.tar.gz"
+      sha256 "b4970fe273f9462ab718ebc1c8eeec678c0102b9d54f84ca26904eb46bfe578e"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/neokapi/neokapi/releases/download/v1.0.1/kapi-bowrain_1.0.1_linux_arm64.tar.gz"      sha256 "10b2ecac2d321bdc7fb92500e3b04774f159cbf911cafb6045527f923b4b988b"
+      url "https://github.com/neokapi/neokapi/releases/download/v1.0.1/kapi-bowrain_1.0.1_linux_arm64.tar.gz"
+      sha256 "10b2ecac2d321bdc7fb92500e3b04774f159cbf911cafb6045527f923b4b988b"
     end
     on_intel do
-      url "https://github.com/neokapi/neokapi/releases/download/v1.0.1/kapi-bowrain_1.0.1_linux_amd64.tar.gz"      sha256 "99e94854ca576c97976fbb31239795f8ac116e20b40b36bf447626e1d5e75ecc"
+      url "https://github.com/neokapi/neokapi/releases/download/v1.0.1/kapi-bowrain_1.0.1_linux_amd64.tar.gz"
+      sha256 "99e94854ca576c97976fbb31239795f8ac116e20b40b36bf447626e1d5e75ecc"
     end
   end
 
