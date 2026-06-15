@@ -1,9 +1,6 @@
-# Use absolute tap path so the require works even when Homebrew loads
-# the cask from its metadata cache during upgrades.
-
 cask "bowrain" do
-  version "1.0.0"
-  sha256 "1d0a1a6ebc0ded540bc1de47d8b05d82e4bd55edfd14ca50463bacedd8a5c45b"
+  version "1.0.1"
+  sha256 "833925a49eb07328974b66593cb029a1ec926215bf98cebef3e502a50e2e0a8a"
 
   url "https://github.com/neokapi/neokapi/releases/download/v#{version}/bowrain-#{version}-macOS-arm64.dmg"
   name "Bowrain"

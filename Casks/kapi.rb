@@ -1,9 +1,6 @@
-# Use absolute tap path so the require works even when Homebrew loads
-# the cask from its metadata cache during upgrades.
-
 cask "kapi" do
-  version "1.0.0"
-  sha256 "37e15daa501d6e0332748142e148ecac0ee2e8a535469d9cc27b5d8f7db7887e"
+  version "1.0.1"
+  sha256 "1d9730bc2a5d0ba88ef5173a258af3c2400b38501d0b565d4285df2d0d823fc9"
 
   url "https://github.com/neokapi/neokapi/releases/download/v#{version}/kapi-desktop-#{version}-macOS-arm64.dmg"
   name "Kapi"
