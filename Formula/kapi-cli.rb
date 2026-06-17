@@ -4,6 +4,9 @@ class KapiCli < Formula
   version "1.1.0"
   license "Apache-2.0"
 
+  # Bundle the PDFium-backed PDF reader so it is installed with kapi-cli.
+  depends_on "neokapi/tap/kapi-pdfium"
+
   on_macos do
     on_arm do
       url "https://github.com/neokapi/neokapi/releases/download/v1.1.0/kapi_1.1.0_darwin_arm64.tar.gz"
