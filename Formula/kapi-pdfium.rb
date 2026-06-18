@@ -1,24 +1,24 @@
 class KapiPdfium < Formula
   desc "PDFium-backed PDF reader plugin for kapi — correct text (incl. CID/CJK) + geometry"
   homepage "https://github.com/neokapi/neokapi/tree/main/plugins/pdfium"
-  version "0.1.2"
+  version "0.1.3"
   license "Apache-2.0"
 
   on_macos do
     on_arm do
-      url "https://github.com/neokapi/neokapi/releases/download/pdfium-v0.1.2/kapi-pdfium_0.1.2_darwin_arm64.tar.gz"
-      sha256 "3680466fcd6cd2ff06a783f0e4d42b2e0fb34bbba8678f5a64ac577fd922d6d1"
+      url "https://github.com/neokapi/neokapi/releases/download/pdfium-v0.1.3/kapi-pdfium_0.1.3_darwin_arm64.tar.gz"
+      sha256 "b2235a24a15714cd63c734029b4083879cd34ac91b7c0e873c42e3ec5e06068c"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/neokapi/neokapi/releases/download/pdfium-v0.1.2/kapi-pdfium_0.1.2_linux_arm64.tar.gz"
-      sha256 "d3d5e2ae9d8cbcfe406da772ed7af7cd00197bdb3ca12a47347076d666e33efc"
+      url "https://github.com/neokapi/neokapi/releases/download/pdfium-v0.1.3/kapi-pdfium_0.1.3_linux_arm64.tar.gz"
+      sha256 "9f4473b1532309c61159d44dc5160fbf50856fab53b0967fff58cf16fd27f992"
     end
     on_intel do
-      url "https://github.com/neokapi/neokapi/releases/download/pdfium-v0.1.2/kapi-pdfium_0.1.2_linux_amd64.tar.gz"
-      sha256 "fa5b5b36c8daf12ead9c117ad7c79b3d387e5d4601f017aa3ddd726aaa6f1062"
+      url "https://github.com/neokapi/neokapi/releases/download/pdfium-v0.1.3/kapi-pdfium_0.1.3_linux_amd64.tar.gz"
+      sha256 "d7038ee60a61cef6dd50d3b630fa89a79b3df0e476d14a302f0d109921ef8fd3"
     end
   end
 
