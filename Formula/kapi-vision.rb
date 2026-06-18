@@ -1,24 +1,24 @@
 class KapiVision < Formula
-  desc "Document-vision (OCR) plugin for kapi — PP-OCRv5 text recognition"
+  desc "Document-vision plugin for kapi — PP-OCRv5 OCR + PP-DocLayoutV3 layout"
   homepage "https://github.com/neokapi/neokapi/tree/main/plugins/vision"
-  version "0.1.0"
+  version "0.2.0"
   license "Apache-2.0"
 
   on_macos do
     on_arm do
-      url "https://github.com/neokapi/neokapi/releases/download/vision-v0.1.0/kapi-vision_0.1.0_darwin_arm64.tar.gz"
-      sha256 "27b533b288ddbe0dadfd9dbd1a297419efbb713c56ed7b65a930d5a059f31de1"
+      url "https://github.com/neokapi/neokapi/releases/download/vision-v0.2.0/kapi-vision_0.2.0_darwin_arm64.tar.gz"
+      sha256 "cb00081095b892491b5a588eeca5add9896ede2bf7c76cec5564f34b39882e7b"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/neokapi/neokapi/releases/download/vision-v0.1.0/kapi-vision_0.1.0_linux_arm64.tar.gz"
-      sha256 "cd970ae22a6dcd0c02dd10296b4560bc0fed341af813e461ab9960ea81f8e676"
+      url "https://github.com/neokapi/neokapi/releases/download/vision-v0.2.0/kapi-vision_0.2.0_linux_arm64.tar.gz"
+      sha256 "4e91df9378500a46c13528023d7df354622a56bba7704b56f1751963c8a98c8d"
     end
     on_intel do
-      url "https://github.com/neokapi/neokapi/releases/download/vision-v0.1.0/kapi-vision_0.1.0_linux_amd64.tar.gz"
-      sha256 "9274498127a20dae3e824bddf376e909ac8a975b15758efc940befb65bd3d081"
+      url "https://github.com/neokapi/neokapi/releases/download/vision-v0.2.0/kapi-vision_0.2.0_linux_amd64.tar.gz"
+      sha256 "a6750c00d74493feff0db580ef85f6c61bce50027f8ef9961755c7c9da603c30"
     end
   end
 
