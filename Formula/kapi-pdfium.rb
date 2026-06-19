@@ -1,5 +1,5 @@
 class KapiPdfium < Formula
-  desc "PDFium-backed PDF reader plugin for kapi — correct text (incl. CID/CJK) + geometry"
+  desc "PDFium-backed PDF reader plugin for kapi (correct CID/CJK text + geometry)"
   homepage "https://github.com/neokapi/neokapi/tree/main/plugins/pdfium"
   version "0.1.4"
   license "Apache-2.0"
@@ -23,20 +23,19 @@ class KapiPdfium < Formula
   end
 
   # Plugin layout: kapi-pdfium binary + manifest.json + lib/<bundled libpdfium>.
-  # Install the whole tree into pkgshare and symlink it into the shared kapi
-  # plugins root so `kapi` discovers it (no depends_on kapi-cli — that would
-  # cycle, since kapi-cli depends_on this).
+  # Install the whole tree under the keg's own share/kapi/plugins/pdfium; Homebrew
+  # then links it to HOMEBREW_PREFIX/share/kapi/plugins/pdfium, the shared kapi
+  # plugins root `kapi` discovers. Installing into the keg (rather than writing
+  # HOMEBREW_PREFIX directly) keeps the install sandbox-safe and lets
+  # `brew uninstall` clean up. No depends_on kapi-cli — that would cycle, since
+  # kapi-cli depends_on this.
   def install
-    plugin_dir = pkgshare/"plugins/pdfium"
-    plugin_dir.install Dir["*"]
-    kapi_share = HOMEBREW_PREFIX/"share/kapi/plugins"
-    kapi_share.mkpath
-    ln_sf plugin_dir, kapi_share/"pdfium"
+    (share/"kapi/plugins/pdfium").install Dir["*"]
   end
 
   test do
     # Bare invocation prints the self-check line and exits 0; this also exercises
     # that the bundled libpdfium resolves via the binary's rpath.
-    assert_match "kapi-pdfium", shell_output("#{HOMEBREW_PREFIX}/share/kapi/plugins/pdfium/kapi-pdfium 2>&1")
+    assert_match "kapi-pdfium", shell_output("#{share}/kapi/plugins/pdfium/kapi-pdfium 2>&1")
   end
 end

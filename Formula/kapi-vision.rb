@@ -23,21 +23,20 @@ class KapiVision < Formula
   end
 
   # Plugin layout: kapi-vision binary + manifest.json + lib/<bundled onnxruntime>
-  # + models/<PP-OCRv5 assets>. Install the whole self-contained tree into
-  # pkgshare and symlink it into the shared kapi plugins root so `kapi` discovers
-  # it (no depends_on kapi-cli — OCR is opt-in, not bundled with the CLI).
+  # + models/<PP-OCRv5 assets>. Install the whole self-contained tree under the
+  # keg's own share/kapi/plugins/vision; Homebrew then links it to
+  # HOMEBREW_PREFIX/share/kapi/plugins/vision, the shared kapi plugins root `kapi`
+  # discovers. Installing into the keg (rather than writing HOMEBREW_PREFIX
+  # directly) keeps the install sandbox-safe and lets `brew uninstall` clean up.
+  # No depends_on kapi-cli — OCR is opt-in, not bundled with the CLI.
   def install
-    plugin_dir = pkgshare/"plugins/vision"
-    plugin_dir.install Dir["*"]
-    kapi_share = HOMEBREW_PREFIX/"share/kapi/plugins"
-    kapi_share.mkpath
-    ln_sf plugin_dir, kapi_share/"vision"
+    (share/"kapi/plugins/vision").install Dir["*"]
   end
 
   test do
     # The self-check constructs the engine (loading the bundled onnxruntime via
     # the binary's rpath) and lists the model assets, then exits 0.
     assert_match "kapi-vision",
-      shell_output("#{HOMEBREW_PREFIX}/share/kapi/plugins/vision/kapi-vision command vision 2>&1")
+      shell_output("#{share}/kapi/plugins/vision/kapi-vision command vision 2>&1")
   end
 end

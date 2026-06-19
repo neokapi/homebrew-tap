@@ -24,21 +24,19 @@ class KapiAsr < Formula
 
   # Plugin layout: kapi-asr binary + manifest.json + NOTICE + bundled whisper-cli
   # (+ its shared libs) + a default ggml-*.bin model. Install the whole
-  # self-contained tree into pkgshare and symlink it into the shared kapi plugins
-  # root so `kapi` discovers it (no depends_on kapi-cli — ASR is opt-in, not
-  # bundled with the CLI).
+  # self-contained tree under the keg's own share/kapi/plugins/asr; Homebrew then
+  # links it to HOMEBREW_PREFIX/share/kapi/plugins/asr, the shared kapi plugins
+  # root `kapi` discovers. Installing into the keg (rather than writing
+  # HOMEBREW_PREFIX directly) keeps the install sandbox-safe and lets
+  # `brew uninstall` clean up. No depends_on kapi-cli — ASR is opt-in.
   def install
-    plugin_dir = pkgshare/"plugins/asr"
-    plugin_dir.install Dir["*"]
-    kapi_share = HOMEBREW_PREFIX/"share/kapi/plugins"
-    kapi_share.mkpath
-    ln_sf plugin_dir, kapi_share/"asr"
+    (share/"kapi/plugins/asr").install Dir["*"]
   end
 
   test do
     # The self-check prints the resolved whisper-cli + model paths and exits 0;
     # this also exercises that the bundled whisper-cli resolves via @loader_path.
     assert_match "kapi-asr",
-      shell_output("#{HOMEBREW_PREFIX}/share/kapi/plugins/asr/kapi-asr asr 2>&1")
+      shell_output("#{share}/kapi/plugins/asr/kapi-asr asr 2>&1")
   end
 end
