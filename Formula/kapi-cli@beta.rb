@@ -9,18 +9,18 @@ class KapiCliATBeta < Formula
   on_macos do
     on_arm do
       url "https://github.com/neokapi/neokapi/releases/download/v1.2.0-rc1/kapi-cli_1.2.0-rc1_darwin_arm64.tar.gz"
-      sha256 "6c6cdfc5733153aff7396b60b73078e9ad3387ed74b6b1059e234cddce0eb4a8"
+      sha256 "2c93ce2bc7ac91d1a396e8ae018f1acc3d8b1271732665294d39fc345d02ac2d"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/neokapi/neokapi/releases/download/v1.2.0-rc1/kapi-cli_1.2.0-rc1_linux_arm64.tar.gz"
-      sha256 "789bb4b9d1b5f2fc31037f3f61d5e31175c3fe717c3ddcd86a97cd2af6f866c2"
+      sha256 "783417e3fc6b81f3dc42f1d0fb8f26062b7a27d9fbebc7fb810d1a94c22d9a6b"
     end
     on_intel do
       url "https://github.com/neokapi/neokapi/releases/download/v1.2.0-rc1/kapi-cli_1.2.0-rc1_linux_amd64.tar.gz"
-      sha256 "c7bc465a85da9c25cb2ee746e87b2f42874d29740a377bb975c43c287a3cb622"
+      sha256 "ea2f9c12667f7d1524a3c8808d52f452357b74c0cc2ce66275829811b1851a52"
     end
   end
 

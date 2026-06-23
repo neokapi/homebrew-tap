@@ -9,18 +9,18 @@ class BowrainCliATBeta < Formula
   on_macos do
     on_arm do
       url "https://github.com/neokapi/neokapi/releases/download/v1.2.0-rc1/kapi-bowrain_1.2.0-rc1_darwin_arm64.tar.gz"
-      sha256 "e51193b86a07cbb34d5cbc802add97a2956bb2f54b6dd224a8f293c5969a087f"
+      sha256 "55b376152f74c3ea62ab3ae7dac494b57fb479e568b6391494a425f8ef66e285"
     end
   end
 
   on_linux do
     on_arm do
       url "https://github.com/neokapi/neokapi/releases/download/v1.2.0-rc1/kapi-bowrain_1.2.0-rc1_linux_arm64.tar.gz"
-      sha256 "152ce857240723a699674e5af74f1278783783d08c0e407ae995726cafd20a6f"
+      sha256 "871fe33f5cbfdecc38db1fe5717b115599c3e1dc3a972c1193350bc158755776"
     end
     on_intel do
       url "https://github.com/neokapi/neokapi/releases/download/v1.2.0-rc1/kapi-bowrain_1.2.0-rc1_linux_amd64.tar.gz"
-      sha256 "adbba292f5261cb95e5183dc8bcab2da7309bd9942925a393e7210fe66cbb85c"
+      sha256 "c43a3e7df295446466749b8758f421cede0a4fc3ef3b6fd29d4b8ec15ff033ea"
     end
   end
 
