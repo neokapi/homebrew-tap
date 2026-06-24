@@ -1,6 +1,6 @@
 cask "kapi@beta" do
-  version "1.2.0-rc5"
-  sha256 "a7655b24cfa1ecf0205abf4fb4f043717c9caecec7ea49ed5676d3e9d187a9a7"
+  version "1.2.0-rc6"
+  sha256 "a7cafc8fc60b520cfcada1009fd86ec2344a9c33be86e8cd251469e5c0b1edce"
 
   url "https://github.com/neokapi/neokapi/releases/download/v#{version}/kapi-#{version}-macOS-arm64.dmg"
   name "Kapi"
