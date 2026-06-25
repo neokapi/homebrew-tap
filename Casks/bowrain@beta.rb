@@ -1,8 +1,8 @@
 cask "bowrain@beta" do
-  version "1.2.0-rc7"
-  sha256 "6f4f2958e42420020d3f881367669563787e2bf97a024a51a99153c5f8aa6d94"
+  version "1.2.0-rc8"
+  sha256 "450d149f6a6d07a5e3910fd34a748070c2068feeeb5a47ce3c4864973bd50a6c"
 
-  url "https://github.com/neokapi/neokapi/releases/download/v#{version}/bowrain-#{version}-macOS-arm64.dmg"
+  url "https://github.com/neokapi/neokapi/releases/download/bowrain-v#{version}/bowrain-#{version}-macOS-arm64.dmg"
   name "Bowrain"
   desc "AI-native translation editor"
   homepage "https://github.com/neokapi/neokapi"
