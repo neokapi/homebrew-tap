@@ -33,6 +33,15 @@ class KapiAv < Formula
     (share/"kapi/plugins/av").install Dir["*"]
   end
 
+  # Absorb macOS Gatekeeper's one-time first-exec assessment of the plugin
+  # binary at install time instead of stalling kapi's first video demux.
+  # Best-effort: a failure just means the first real exec pays it instead.
+  def post_install
+    system share/"kapi/plugins/av/kapi-av", "av"
+  rescue
+    nil
+  end
+
   test do
     # The self-check prints the resolved ffmpeg/ffprobe paths and exits 0.
     assert_match "kapi-av",

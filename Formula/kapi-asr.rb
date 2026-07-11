@@ -33,6 +33,15 @@ class KapiAsr < Formula
     (share/"kapi/plugins/asr").install Dir["*"]
   end
 
+  # Absorb macOS Gatekeeper's one-time first-exec assessment of the plugin
+  # binary at install time instead of stalling kapi's first transcription.
+  # Best-effort: a failure just means the first real exec pays it instead.
+  def post_install
+    system share/"kapi/plugins/asr/kapi-asr", "asr"
+  rescue
+    nil
+  end
+
   test do
     # The self-check prints the resolved whisper-cli + model paths and exits 0;
     # this also exercises that the bundled whisper-cli resolves via @loader_path.

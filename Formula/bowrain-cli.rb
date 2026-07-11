@@ -35,6 +35,13 @@ class BowrainCli < Formula
     ln_sf plugin_dir, kapi_share/"bowrain"
   end
 
+
+  # Absorb macOS Gatekeeper's one-time first-exec assessment of the plugin
+  # binary at install time instead of stalling the first bowrain command.
+  def post_install
+    system pkgshare/"plugins/bowrain/kapi-bowrain", "version"
+  end
+
   test do
     system HOMEBREW_PREFIX/"share/kapi/plugins/bowrain/kapi-bowrain", "version"
   end

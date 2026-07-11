@@ -33,6 +33,15 @@ class KapiVision < Formula
     (share/"kapi/plugins/vision").install Dir["*"]
   end
 
+  # Absorb macOS Gatekeeper's one-time first-exec assessment of the plugin
+  # binary at install time instead of stalling kapi's first vision dispatch.
+  # Best-effort: a failure just means the first real exec pays it instead.
+  def post_install
+    system share/"kapi/plugins/vision/kapi-vision", "command", "vision"
+  rescue
+    nil
+  end
+
   test do
     # The self-check constructs the engine (loading the bundled onnxruntime via
     # the binary's rpath) and lists the model assets, then exits 0.

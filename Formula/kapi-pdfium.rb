@@ -33,6 +33,15 @@ class KapiPdfium < Formula
     (share/"kapi/plugins/pdfium").install Dir["*"]
   end
 
+  # Absorb macOS Gatekeeper's one-time first-exec assessment of the plugin
+  # binary at install time instead of stalling kapi's first PDF read.
+  # Best-effort: a failure just means the first real exec pays it instead.
+  def post_install
+    system share/"kapi/plugins/pdfium/kapi-pdfium"
+  rescue
+    nil
+  end
+
   test do
     # Bare invocation prints the self-check line and exits 0; this also exercises
     # that the bundled libpdfium resolves via the binary's rpath.
