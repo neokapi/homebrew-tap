@@ -1,7 +1,7 @@
 class KapiCliBeta < Formula
   desc "AI-native localization framework — format-aware parsing, concurrent pipelines, and pluggable tools"
   homepage "https://github.com/neokapi/neokapi"
-  version "1.2.0-rc12"
+  version "1.2.0-rc13"
   license "Apache-2.0"
 
   depends_on "neokapi/tap/kapi-pdfium"
@@ -9,19 +9,19 @@ class KapiCliBeta < Formula
 
   on_macos do
     on_arm do
-      url "https://github.com/neokapi/neokapi/releases/download/v1.2.0-rc12/kapi-cli_1.2.0-rc12_darwin_arm64.tar.gz"
-      sha256 "7c712419ff08f67e606d60aaf952fb898c9edf1a5979f6cc3f6025758cb91db3"
+      url "https://github.com/neokapi/neokapi/releases/download/v1.2.0-rc13/kapi-cli_1.2.0-rc13_darwin_arm64.tar.gz"
+      sha256 "6ea41145fd10c91e366431bdeb9a418eeea89b51809758f13ed1f48b50818747"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/neokapi/neokapi/releases/download/v1.2.0-rc12/kapi-cli_1.2.0-rc12_linux_arm64.tar.gz"
-      sha256 "590d1207bd565c9f2b40a2eedae0473bf39ef517ed386b54da74f5eac69bcb91"
+      url "https://github.com/neokapi/neokapi/releases/download/v1.2.0-rc13/kapi-cli_1.2.0-rc13_linux_arm64.tar.gz"
+      sha256 "8241af4924ce7d94dcaa4ed3c5845f2cb5758b5ef3756107e02372c29bb2cc48"
     end
     on_intel do
-      url "https://github.com/neokapi/neokapi/releases/download/v1.2.0-rc12/kapi-cli_1.2.0-rc12_linux_amd64.tar.gz"
-      sha256 "82232d339bc515428b75e354dcea16bf2e6d34589ec3ccb17c98fa6118e8176a"
+      url "https://github.com/neokapi/neokapi/releases/download/v1.2.0-rc13/kapi-cli_1.2.0-rc13_linux_amd64.tar.gz"
+      sha256 "81469e4cd0bd54c7ed610dfcc6803f082fb5e4896f2139b7515cb43985e0b67f"
     end
   end
 
