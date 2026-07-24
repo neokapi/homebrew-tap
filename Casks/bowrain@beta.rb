@@ -1,6 +1,6 @@
 cask "bowrain@beta" do
-  version "1.2.0-rc14"
-  sha256 "1a58cfc3c106118935fc195ebc4e1df7d657c9bf179d1cd269158425aaf7af3a"
+  version "1.2.0-rc15"
+  sha256 "ee245deec92d393584b8fbef4694cc9c3322983b5d3a269f72a64c48feec875b"
 
   url "https://github.com/neokapi/neokapi/releases/download/bowrain-v#{version}/bowrain-#{version}-macOS-arm64.dmg"
   name "Bowrain"
