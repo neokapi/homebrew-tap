@@ -1,11 +1,10 @@
 class KapiCliBeta < Formula
-  desc "AI-native localization framework — format-aware parsing, concurrent pipelines, and pluggable tools"
+  desc "AI-native localization framework — format-aware parsing and pluggable tools"
   homepage "https://github.com/neokapi/neokapi"
   version "1.2.0-rc15"
   license "Apache-2.0"
 
   depends_on "neokapi/tap/kapi-pdfium"
-  conflicts_with "kapi-cli", because: "both install the kapi binary"
 
   on_macos do
     on_arm do
@@ -24,6 +23,8 @@ class KapiCliBeta < Formula
       sha256 "ee77a23787eb40baa6495b60bc9fe90206c7180714f016f7269278be466ae29f"
     end
   end
+
+  conflicts_with "kapi-cli", because: "both install the kapi binary"
 
   # Install kapi plus its multi-call toolbox aliases. kgrep / ksed / kcat /
   # kconv / kdiff are symlinks to the kapi binary, which dispatches on its

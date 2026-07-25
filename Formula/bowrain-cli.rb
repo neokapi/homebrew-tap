@@ -24,25 +24,36 @@ class BowrainCli < Formula
     end
   end
 
-  def install
-    plugin_dir = pkgshare/"plugins/bowrain"
-    plugin_dir.mkpath
-    plugin_dir.install Dir["bowrain/*"]
-    # Symlink so HOMEBREW_PREFIX/share/kapi/plugins/bowrain/ resolves
-    # to this formula's pkgshare/plugins/bowrain/.
-    kapi_share = HOMEBREW_PREFIX/"share/kapi/plugins"
-    kapi_share.mkpath
-    ln_sf plugin_dir, kapi_share/"bowrain"
-  end
+  conflicts_with "bowrain-cli-beta", because: "both install the bowrain plugin"
 
+  # Plugin layout: kapi-bowrain binary + manifest.json, under a single `bowrain/`
+  # top-level directory. Homebrew chdirs into that directory before `install`
+  # runs, so the staged tree is flat — glob "*", not "bowrain/*" (which matches
+  # nothing and installs an empty array). Install the whole tree under the keg's
+  # own share/kapi/plugins/bowrain; Homebrew then links it to
+  # HOMEBREW_PREFIX/share/kapi/plugins/bowrain, the shared kapi plugins root
+  # `kapi` discovers. Installing into the keg (rather than symlinking into
+  # HOMEBREW_PREFIX, which the install sandbox denies with EPERM because that
+  # path belongs to another formula) keeps the install sandbox-safe and lets
+  # `brew uninstall` clean up.
+  def install
+    (share/"kapi/plugins/bowrain").install Dir["*"]
+  end
 
   # Absorb macOS Gatekeeper's one-time first-exec assessment of the plugin
   # binary at install time instead of stalling the first bowrain command.
+  # Best-effort: a failure just means the first real exec pays it instead.
   def post_install
-    system pkgshare/"plugins/bowrain/kapi-bowrain", "version"
+    system share/"kapi/plugins/bowrain/kapi-bowrain", "version"
+  rescue
+    nil
   end
 
   test do
-    system HOMEBREW_PREFIX/"share/kapi/plugins/bowrain/kapi-bowrain", "version"
+    # The plugin binary reports the version it was built at; this also proves the
+    # tree actually landed in the shared kapi plugins root rather than being a
+    # silently-empty install.
+    assert_match version.to_s,
+      shell_output("#{share}/kapi/plugins/bowrain/kapi-bowrain version 2>&1")
   end
 end
