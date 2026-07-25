@@ -1,5 +1,5 @@
 class KapiCli < Formula
-  desc "AI-native localization framework — format-aware parsing, concurrent pipelines, and pluggable tools"
+  desc "AI-native localization framework — format-aware parsing and pluggable tools"
   homepage "https://github.com/neokapi/neokapi"
   version "1.1.0"
   license "Apache-2.0"
@@ -25,6 +25,8 @@ class KapiCli < Formula
     end
   end
 
+  conflicts_with "kapi-cli-beta", because: "both install the kapi binary"
+
   # Install kapi plus its multi-call toolbox aliases. kgrep / ksed / kcat /
   # kconv / kdiff are symlinks to the kapi binary, which dispatches on its
   # invocation name (busybox-style) — no extra binaries, no extra download size.
@@ -36,7 +38,6 @@ class KapiCli < Formula
     bin.install_symlink bin/"kapi" => "kconv"
     bin.install_symlink bin/"kapi" => "kdiff"
   end
-
 
   # First exec of a newly installed binary pays macOS Gatekeeper's one-time
   # assessment (an XProtect scan proportional to binary size plus an online
