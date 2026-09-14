@@ -1,26 +1,26 @@
 class BowrainCliBeta < Formula
   desc "Bowrain plugin for kapi — sync .kapi projects with Bowrain Server"
   homepage "https://github.com/neokapi/neokapi"
-  version "1.2.0-rc29"
+  version "1.2.0-rc30"
   license "Apache-2.0"
 
   depends_on "neokapi/tap/kapi-cli-beta"
 
   on_macos do
     on_arm do
-      url "https://github.com/neokapi/neokapi/releases/download/bowrain-v1.2.0-rc29/kapi-bowrain_1.2.0-rc29_darwin_arm64.tar.gz"
-      sha256 "bd80db102521f9fb7b1171737dfe5e7b5908f3f2c53829d604adf3dc208794b1"
+      url "https://github.com/neokapi/neokapi/releases/download/bowrain-v1.2.0-rc30/kapi-bowrain_1.2.0-rc30_darwin_arm64.tar.gz"
+      sha256 "2db2e1dbfb14003e89c85c7b893bd2b9391395c1117d212b4bcf9f5563625ac7"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/neokapi/neokapi/releases/download/bowrain-v1.2.0-rc29/kapi-bowrain_1.2.0-rc29_linux_arm64.tar.gz"
-      sha256 "6cfbfcab58bdda8bd520e9459938ca0c74971ee5b62b5ded03a5823d04acc9bd"
+      url "https://github.com/neokapi/neokapi/releases/download/bowrain-v1.2.0-rc30/kapi-bowrain_1.2.0-rc30_linux_arm64.tar.gz"
+      sha256 "a7659a1cf64738bebf49d8de3d00f13031c206c4fa220dab3002952e63ddb84f"
     end
     on_intel do
-      url "https://github.com/neokapi/neokapi/releases/download/bowrain-v1.2.0-rc29/kapi-bowrain_1.2.0-rc29_linux_amd64.tar.gz"
-      sha256 "f9a0fbbc1652c8088607ab129f4a2af039ac678645a7b6e7411403f0d03472ec"
+      url "https://github.com/neokapi/neokapi/releases/download/bowrain-v1.2.0-rc30/kapi-bowrain_1.2.0-rc30_linux_amd64.tar.gz"
+      sha256 "c1bcd57a074df11047dbdc9e0fde5db46752c4a02988c18cf21d8496547bfb46"
     end
   end
 
