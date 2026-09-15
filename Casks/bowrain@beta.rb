@@ -23,8 +23,9 @@ cask "bowrain@beta" do
   EOS
 
   zap trash: [
-    "~/Library/Application Support/Bowrain",
-    "~/Library/Preferences/com.wails.bowrain.plist",
-    "~/Library/Caches/Bowrain",
+    "~/Library/Application Support/bowrain-desktop",
+    "~/Library/Caches/io.github.neokapi.bowrain",
+    "~/Library/Preferences/io.github.neokapi.bowrain.plist",
+    "~/Library/WebKit/io.github.neokapi.bowrain",
   ]
 end

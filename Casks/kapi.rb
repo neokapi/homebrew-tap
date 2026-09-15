@@ -23,8 +23,9 @@ cask "kapi" do
   EOS
 
   zap trash: [
-    "~/Library/Application Support/Kapi",
+    "~/Library/Application Support/kapi-desktop",
+    "~/Library/Caches/io.github.neokapi.kapi-desktop",
     "~/Library/Preferences/io.github.neokapi.kapi-desktop.plist",
-    "~/Library/Caches/Kapi",
+    "~/Library/WebKit/io.github.neokapi.kapi-desktop",
   ]
 end
