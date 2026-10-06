@@ -1,26 +1,26 @@
 class BowrainCliBeta < Formula
   desc "Bowrain plugin for kapi — sync .kapi projects with Bowrain Server"
   homepage "https://github.com/neokapi/neokapi"
-  version "1.3.0-rc4"
+  version "1.3.0-rc5"
   license "Apache-2.0"
 
   depends_on "neokapi/tap/kapi-cli-beta"
 
   on_macos do
     on_arm do
-      url "https://github.com/neokapi/neokapi/releases/download/bowrain-v1.3.0-rc4/kapi-bowrain_1.3.0-rc4_darwin_arm64.tar.gz"
-      sha256 "7dc2ad866f31d3287e72b271ceb2bae13dd11d85888245e49872ec3e8b04e6cd"
+      url "https://github.com/neokapi/neokapi/releases/download/bowrain-v1.3.0-rc5/kapi-bowrain_1.3.0-rc5_darwin_arm64.tar.gz"
+      sha256 "a7d782b3baede9476e55c7620309acfa47c590fdb0a06b0fc19f6f34dfaeb34e"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/neokapi/neokapi/releases/download/bowrain-v1.3.0-rc4/kapi-bowrain_1.3.0-rc4_linux_arm64.tar.gz"
-      sha256 "ab746ac688a162cdd96a25e4644e6b2d5562651977de56fead7882844e79478c"
+      url "https://github.com/neokapi/neokapi/releases/download/bowrain-v1.3.0-rc5/kapi-bowrain_1.3.0-rc5_linux_arm64.tar.gz"
+      sha256 "c94e21dc4c6b934d26b9e18fdc31fbfd8456f1d0392dbdb1a4385135ff698bc8"
     end
     on_intel do
-      url "https://github.com/neokapi/neokapi/releases/download/bowrain-v1.3.0-rc4/kapi-bowrain_1.3.0-rc4_linux_amd64.tar.gz"
-      sha256 "9cc96fe80b3bf7812dec4aa3029015ea397bc1fdbac804331250c032689c6431"
+      url "https://github.com/neokapi/neokapi/releases/download/bowrain-v1.3.0-rc5/kapi-bowrain_1.3.0-rc5_linux_amd64.tar.gz"
+      sha256 "fc3cd7c7143206961e1c7d1faf58c1df774fa9bbda948e8dcf0fd6014d47f613"
     end
   end
 
@@ -43,10 +43,8 @@ class BowrainCliBeta < Formula
   # Absorb macOS Gatekeeper's one-time first-exec assessment of the plugin
   # binary at install time instead of stalling the first bowrain command.
   # Best-effort: a failure just means the first real exec pays it instead.
-  def post_install
-    system share/"kapi/plugins/bowrain/kapi-bowrain", "version"
-  rescue
-    nil
+  post_install_steps do
+    run "kapi/plugins/bowrain/kapi-bowrain", args: ["version"], base: :share, must_succeed: false
   end
 
   test do
