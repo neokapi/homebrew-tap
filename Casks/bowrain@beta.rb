@@ -1,10 +1,10 @@
 cask "bowrain@beta" do
-  version "1.3.0-rc3"
-  sha256 "9d4c3a99060490675a27262d63bdd591fd5bcbfaa1cb53e6a2bd3412d0659bdd"
+  version "1.3.0-rc4"
+  sha256 "3cf8581d159c1ecfaac3ad3c2722870f0e66c55070150ad6b22bca25167c8643"
 
   url "https://github.com/neokapi/neokapi/releases/download/bowrain-v#{version}/bowrain-#{version}-macOS-arm64.dmg"
   name "Bowrain"
-  desc "AI-native translation editor"
+  desc "Desktop client for a team's shared context graph, with offline editing"
   homepage "https://github.com/neokapi/neokapi"
 
   conflicts_with cask: "bowrain"
