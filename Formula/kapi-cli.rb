@@ -1,26 +1,26 @@
 class KapiCli < Formula
   desc "Format-aware content engine — parse, edit and check any format"
   homepage "https://github.com/neokapi/neokapi"
-  version "1.2.0"
+  version "1.3.0"
   license "Apache-2.0"
 
   depends_on "neokapi/tap/kapi-pdfium"
 
   on_macos do
     on_arm do
-      url "https://github.com/neokapi/neokapi/releases/download/v1.2.0/kapi-cli_1.2.0_darwin_arm64.tar.gz"
-      sha256 "d44f5ee94cc35079e03e550eaadab4e2c42931e832dc387cf2619a34f106e5a8"
+      url "https://github.com/neokapi/neokapi/releases/download/v1.3.0/kapi-cli_1.3.0_darwin_arm64.tar.gz"
+      sha256 "06a671cbf4fb07715968351a1831a871516a0e673e532cb7e7c8cca4b7a38297"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/neokapi/neokapi/releases/download/v1.2.0/kapi-cli_1.2.0_linux_arm64.tar.gz"
-      sha256 "a93dec5e38673b68bcd6c3f920fa918b68fa9ab508cdc9946215755fa97b0325"
+      url "https://github.com/neokapi/neokapi/releases/download/v1.3.0/kapi-cli_1.3.0_linux_arm64.tar.gz"
+      sha256 "829b0c88125847e2fef58431b2f77db8de75cfd3d1f47fd7209113072bb63460"
     end
     on_intel do
-      url "https://github.com/neokapi/neokapi/releases/download/v1.2.0/kapi-cli_1.2.0_linux_amd64.tar.gz"
-      sha256 "ed6ee0de09be4f2a3d98e2d2ad3de149592edc765a9ba8a6d08cf5d3291e123e"
+      url "https://github.com/neokapi/neokapi/releases/download/v1.3.0/kapi-cli_1.3.0_linux_amd64.tar.gz"
+      sha256 "bd359671124c6cd5b615eb5b786b4754780e6d6df77e5dcc26a815e183130e80"
     end
   end
 
@@ -43,8 +43,9 @@ class KapiCli < Formula
   # notarization lookup — 1-3s for kapi). Absorb it at install time so the
   # user's first `kapi` command starts fast. `--version` exits before touching
   # any user config or project state; elsewhere this is a harmless ~20ms no-op.
-  def post_install
-    system bin/"kapi", "--version"
+  # Best-effort: a failure means the first real exec pays the assessment.
+  post_install_steps do
+    run "kapi", args: ["--version"], base: :bin, must_succeed: false
   end
 
   test do
