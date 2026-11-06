@@ -1,10 +1,10 @@
 cask "bowrain" do
-  version "1.2.0"
-  sha256 "ca1fb0b5c185ea1812d6d0d33f5ed93d026224bcb66751e2a4835e1532a3731f"
+  version "1.3.0"
+  sha256 "7471472ade66f53cfc411e305ef4732c20f7ef8059f1d58707e841ef9e115dc4"
 
   url "https://github.com/neokapi/neokapi/releases/download/bowrain-v#{version}/bowrain-#{version}-macOS-arm64.dmg"
   name "Bowrain"
-  desc "AI-native translation editor"
+  desc "Desktop client for a team's shared context graph, with offline editing"
   homepage "https://github.com/neokapi/neokapi"
 
   depends_on formula: "neokapi/tap/bowrain-cli"
