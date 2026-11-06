@@ -1,26 +1,26 @@
 class BowrainCli < Formula
   desc "Bowrain plugin for kapi — sync .kapi projects with Bowrain Server"
   homepage "https://github.com/neokapi/neokapi"
-  version "1.2.0"
+  version "1.3.0"
   license "Apache-2.0"
 
   depends_on "neokapi/tap/kapi-cli"
 
   on_macos do
     on_arm do
-      url "https://github.com/neokapi/neokapi/releases/download/bowrain-v1.2.0/kapi-bowrain_1.2.0_darwin_arm64.tar.gz"
-      sha256 "c1d95494736461d894bcb271e5cbcd549f1662515c9a1d42a2bbc6d8e4d258f5"
+      url "https://github.com/neokapi/neokapi/releases/download/bowrain-v1.3.0/kapi-bowrain_1.3.0_darwin_arm64.tar.gz"
+      sha256 "4f68a224699655c31658b08544d7d9f6c1ad91f69d61f7c5597bf0593bdad837"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/neokapi/neokapi/releases/download/bowrain-v1.2.0/kapi-bowrain_1.2.0_linux_arm64.tar.gz"
-      sha256 "090c1183e0510021de62798c3158e7d1d1ac5a2679e3610ee03673cbfad5a8d1"
+      url "https://github.com/neokapi/neokapi/releases/download/bowrain-v1.3.0/kapi-bowrain_1.3.0_linux_arm64.tar.gz"
+      sha256 "42c461f1676b0603b774fecfb22334d45f76e1458daedf84216ad0fb48979e66"
     end
     on_intel do
-      url "https://github.com/neokapi/neokapi/releases/download/bowrain-v1.2.0/kapi-bowrain_1.2.0_linux_amd64.tar.gz"
-      sha256 "cea0e8c278b782ea6d9ffbe839572b6228878e00d1b49ccc7a85197da35aa86d"
+      url "https://github.com/neokapi/neokapi/releases/download/bowrain-v1.3.0/kapi-bowrain_1.3.0_linux_amd64.tar.gz"
+      sha256 "91db105d7a60f18e20744866f5193070520fa80356634cfba5575ca7c22cddde"
     end
   end
 
@@ -43,10 +43,8 @@ class BowrainCli < Formula
   # Absorb macOS Gatekeeper's one-time first-exec assessment of the plugin
   # binary at install time instead of stalling the first bowrain command.
   # Best-effort: a failure just means the first real exec pays it instead.
-  def post_install
-    system share/"kapi/plugins/bowrain/kapi-bowrain", "version"
-  rescue
-    nil
+  post_install_steps do
+    run "kapi/plugins/bowrain/kapi-bowrain", args: ["version"], base: :share, must_succeed: false
   end
 
   test do
