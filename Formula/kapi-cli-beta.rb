@@ -1,26 +1,26 @@
 class KapiCliBeta < Formula
   desc "Format-aware content engine — parse, edit and check any format"
   homepage "https://github.com/neokapi/neokapi"
-  version "1.4.0-rc1"
+  version "1.4.0-rc2"
   license "Apache-2.0"
 
   depends_on "neokapi/tap/kapi-pdfium"
 
   on_macos do
     on_arm do
-      url "https://github.com/neokapi/neokapi/releases/download/v1.4.0-rc1/kapi-cli_1.4.0-rc1_darwin_arm64.tar.gz"
-      sha256 "ae377d056aa2aec0c4ed5446172f53730d8fefaab0b36a2c0d43ea3a611b5b25"
+      url "https://github.com/neokapi/neokapi/releases/download/v1.4.0-rc2/kapi-cli_1.4.0-rc2_darwin_arm64.tar.gz"
+      sha256 "8141f403e3a62c0bab4b9264eddeae356911797f9b22cb8a09563115f533f7b4"
     end
   end
 
   on_linux do
     on_arm do
-      url "https://github.com/neokapi/neokapi/releases/download/v1.4.0-rc1/kapi-cli_1.4.0-rc1_linux_arm64.tar.gz"
-      sha256 "2f10def556e825390ee95ff1cc8d1b6bb1531eb198f717189818b8dca7f07dd7"
+      url "https://github.com/neokapi/neokapi/releases/download/v1.4.0-rc2/kapi-cli_1.4.0-rc2_linux_arm64.tar.gz"
+      sha256 "160c76edc18a48a43cbf14d6628a6513b68d7e3cbb8b30c8cdb5015dc9868660"
     end
     on_intel do
-      url "https://github.com/neokapi/neokapi/releases/download/v1.4.0-rc1/kapi-cli_1.4.0-rc1_linux_amd64.tar.gz"
-      sha256 "4d94826a6ab7f58a0a0cc20133262a6000fa12377067cbfb171780386a9de88c"
+      url "https://github.com/neokapi/neokapi/releases/download/v1.4.0-rc2/kapi-cli_1.4.0-rc2_linux_amd64.tar.gz"
+      sha256 "7569107ce10c57ba3bec545a96cd9f68f245ec5fcf175b3680f1f30f055eb0f1"
     end
   end
 
