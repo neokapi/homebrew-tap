@@ -8,7 +8,7 @@ cask "bowrain" do
   homepage "https://github.com/neokapi/neokapi"
 
   depends_on formula: "neokapi/tap/bowrain-cli"
-  depends_on :macos
+  depends_on macos: :ventura
 
   app "Bowrain.app"
 

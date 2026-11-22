@@ -7,6 +7,8 @@ class KapiCliBeta < Formula
   depends_on "neokapi/tap/kapi-pdfium"
 
   on_macos do
+    depends_on macos: :ventura
+
     on_arm do
       url "https://github.com/neokapi/neokapi/releases/download/v1.4.0-rc5/kapi-cli_1.4.0-rc5_darwin_arm64.tar.gz"
       sha256 "28c779b3d7889b221979fe730ae35dac35804c5a21e295f43972421d62e6763e"
