@@ -7,6 +7,8 @@ class BowrainCli < Formula
   depends_on "neokapi/tap/kapi-cli"
 
   on_macos do
+    depends_on macos: :ventura
+
     on_arm do
       url "https://github.com/neokapi/neokapi/releases/download/bowrain-v1.3.0/kapi-bowrain_1.3.0_darwin_arm64.tar.gz"
       sha256 "4f68a224699655c31658b08544d7d9f6c1ad91f69d61f7c5597bf0593bdad837"

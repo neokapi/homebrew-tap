@@ -5,6 +5,8 @@ class KapiAsr < Formula
   license "Apache-2.0"
 
   on_macos do
+    depends_on macos: :sequoia
+
     on_arm do
       url "https://github.com/neokapi/neokapi/releases/download/asr-v0.1.0/kapi-asr_0.1.0_darwin_arm64.tar.gz"
       sha256 "f2e726be8270e99d386e199558d916319f9e7f30671380bceed7eb497671afec"

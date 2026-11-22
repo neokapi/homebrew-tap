@@ -9,7 +9,7 @@ cask "kapi@beta" do
 
   conflicts_with cask: "kapi"
   depends_on formula: "neokapi/tap/kapi-cli-beta"
-  depends_on :macos
+  depends_on macos: :ventura
 
   app "Kapi.app"
 

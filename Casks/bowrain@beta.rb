@@ -9,7 +9,7 @@ cask "bowrain@beta" do
 
   conflicts_with cask: "bowrain"
   depends_on formula: "neokapi/tap/bowrain-cli-beta"
-  depends_on :macos
+  depends_on macos: :ventura
 
   app "Bowrain.app"
 

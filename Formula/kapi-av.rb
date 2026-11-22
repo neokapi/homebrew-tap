@@ -5,6 +5,8 @@ class KapiAv < Formula
   license "Apache-2.0"
 
   on_macos do
+    depends_on macos: :sequoia
+
     on_arm do
       url "https://github.com/neokapi/neokapi/releases/download/av-v0.1.0/kapi-av_0.1.0_darwin_arm64.tar.gz"
       sha256 "1b24b10e8042089faad51bcd93a7e7827d5e43fbb2dd4802076cee4fa10f5ae3"

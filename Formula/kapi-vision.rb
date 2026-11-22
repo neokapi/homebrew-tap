@@ -5,6 +5,8 @@ class KapiVision < Formula
   license "Apache-2.0"
 
   on_macos do
+    depends_on macos: :sequoia
+
     on_arm do
       url "https://github.com/neokapi/neokapi/releases/download/vision-v0.2.0/kapi-vision_0.2.0_darwin_arm64.tar.gz"
       sha256 "cb00081095b892491b5a588eeca5add9896ede2bf7c76cec5564f34b39882e7b"

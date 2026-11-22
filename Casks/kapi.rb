@@ -8,7 +8,7 @@ cask "kapi" do
   homepage "https://github.com/neokapi/neokapi"
 
   depends_on formula: "neokapi/tap/kapi-cli"
-  depends_on :macos
+  depends_on macos: :ventura
 
   app "Kapi.app"
 
